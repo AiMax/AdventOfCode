@@ -14,3 +14,18 @@ if __name__ == '__main__':
             depth += int(item[1])
 
     print(forward * depth)
+
+    forward = 0
+    depth = 0
+    aim = 0
+
+    for item in data:
+        if item[0] == 'forward':
+            forward += int(item[1])
+            depth += aim * int(item[1])
+        if item[0] == 'up':
+            aim = max(aim - int(item[1]), 0)
+        if item[0] == 'down':
+            aim += int(item[1])
+
+    print(forward * depth)
